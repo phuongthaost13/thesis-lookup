@@ -13,8 +13,10 @@ dt <- rbind(k42, k43) %>%
     slice(-(1:1)) %>% 
     select(-time) %>% 
     mutate(id = row_number(), .before=1) %>% 
+    slice(-(38:38)) %>% 
     select(-last_col()) %>% 
-    mutate(email = 'Liên hệ để biết thêm')
+    mutate(email = 'Liên hệ để biết thêm') 
+
 
 
 shinyApp(
@@ -29,5 +31,6 @@ shinyApp(
         }, rownames = TRUE)
     }
 )
+
 
 
